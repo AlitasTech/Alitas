@@ -6,10 +6,10 @@ import (
 	"strconv"
 	"sync"
 
-	hg "github.com/mosaicnetworks/babble/src/hashgraph"
+	hg "github.com/AlitasTech/Alitas/src/hashgraph"
 
-	"github.com/mosaicnetworks/babble/src/node"
-	"github.com/mosaicnetworks/babble/src/peers"
+	"github.com/AlitasTech/Alitas/src/node"
+	"github.com/AlitasTech/Alitas/src/peers"
 	"github.com/sirupsen/logrus"
 )
 
@@ -127,6 +127,7 @@ func (s *Service) GetBlock(w http.ResponseWriter, r *http.Request) {
 GetBlocks will fetch an array of blocks starting at {startIndex} and finishing
 {counts<=MAXBLOCKS} blocks later. If no count param is provided it will just
 return the index requested rather than listing blocks.
+
 GET /blocks/{startIndex}?count={x}
 example: /blocks/0?count=50
 returns: JSON []hashgraph.Block
@@ -204,6 +205,7 @@ func (s *Service) GetGraph(w http.ResponseWriter, r *http.Request) {
 /*
 GetPeers returns the node's current peers, which is not necessarily equivalent
 to the current validator-set.
+
 GET /peers
 returns: JSON []peers.Peer
 */
@@ -213,6 +215,7 @@ func (s *Service) GetPeers(w http.ResponseWriter, r *http.Request) {
 
 /*
 GetGenesisPeers returns the genesis validator-set
+
 Get /genesispeers
 returns: JSON []peers.Peer
 */
@@ -229,6 +232,7 @@ func (s *Service) GetGenesisPeers(w http.ResponseWriter, r *http.Request) {
 /*
 GetValidatorSet returns the validator-set associated to a specific hashgraph
 round. If no round is specified, it returns the current validator-set.
+
 Get /validators/{round}
 returns: JSON []peers.Peer
 */
@@ -259,6 +263,7 @@ func (s *Service) GetValidatorSet(w http.ResponseWriter, r *http.Request) {
 /*
 GetAllValidatorSets returns the entire map of round to validator-sets which
 represents the history of the validator-set from the inception of the network.
+
 Get /history
 returns: JSON map[int][]peers.Peer
 */

@@ -3,7 +3,7 @@ package commands
 import (
 	"fmt"
 
-	"github.com/mosaicnetworks/babble/src/version"
+	"github.com/AlitasTech/Alitas/src/version"
 	"github.com/spf13/cobra"
 )
 

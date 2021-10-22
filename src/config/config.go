@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mosaicnetworks/babble/src/common"
-	"github.com/mosaicnetworks/babble/src/proxy"
+	"github.com/AlitasTech/Alitas/src/common"
+	"github.com/AlitasTech/Alitas/src/proxy"
 	"github.com/sirupsen/logrus"
 	prefixed "github.com/x-cray/logrus-prefixed-formatter"
 )
@@ -113,7 +113,7 @@ type Config struct {
 
 	// LoadPeers determines whether or not to attempt loading the peer-set from
 	// a local json file.
-	LoadPeers bool
+	LoadPeers bool `mapstructure:"loadpeers"`
 
 	// Proxy is the application proxy that enables Babble to communicate with
 	// application.
@@ -144,7 +144,7 @@ func NewDefaultConfig() *Config {
 		MaintenanceMode:      false,
 		DatabaseDir:          DefaultDatabaseDir(),
 		LoadPeers:            true,
-		SuspendLimit:         300,
+		SuspendLimit:         100,
 	}
 
 	return config
