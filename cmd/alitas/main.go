@@ -13,7 +13,8 @@ func main() {
 	rootCmd.AddCommand(
 		cmd.VersionCmd,
 		cmd.NewKeygenCmd(),
-		cmd.NewRunCmd())
+		//cmd.NewRunCmd()
+	)
 
 	//Do not print usage when error occurs
 	rootCmd.SilenceUsage = true
